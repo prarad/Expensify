@@ -1,20 +1,22 @@
 import React from 'react';
-import { addExpense } from '../actions/expenses'
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css'
+import { connect } from 'react-redux';
 
 export default class ExpenseForm extends React.Component {
-  state = {
-    description: '',
-    amount: '',
-    note: '',
-    createdAt: moment(),
-    calendarFocused: false,
-    error: ''
+  constructor(props) {
+    super();
+    this.state = {
+      description: props.expense ? props.expense.description : '',
+      note: props.expense ? props.expense.note : '',
+      amount: props.expense ? (props.expense.amount / 100).toString() : '',
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      calendarFocused: false,
+      error: ''
+    }
   }
-  dispatch = this.props.dispatch;
 
   onDescriptionChange = e => {
     const description = e.target.value;
@@ -45,23 +47,22 @@ export default class ExpenseForm extends React.Component {
       }))
     } else {
       this.setState(() => ({ error: '' }))
-    }
-    !this.state.error && this.dispatch(
-      addExpense({
+      this.props.onSubmit({
         description: this.state.description,
-        note: this.state.note,
-        amount: this.state.amount,
-        createdAt: this.state.createdAt
-      })
-    )
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      });
+    }
   }
   render() {
     return (
       <div className='Expense-Form'>
 
-        {!!this.state.error && <p>{this.state.error}</p>}
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <input type="text"
+            value={this.state.description}
             placeholder='Description'
             onChange={this.onDescriptionChange}
             autoFocus
@@ -80,6 +81,7 @@ export default class ExpenseForm extends React.Component {
             isOutsideRange={() => false}
           />
           <textarea name="" id="" cols="30" rows="10"
+            value={this.state.note}
             placeholder='Add a note for your expense(optional)'
             onChange={this.onNoteChange}
           ></textarea>
