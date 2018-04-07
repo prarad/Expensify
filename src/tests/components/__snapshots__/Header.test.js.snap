@@ -5,27 +5,9 @@ exports[`should render Header correctly 1`] = `
   <h1>
     Expensify
   </h1>
-  <nav
-    style={
-      Object {
-        "color": "purple",
-        "display": "flex",
-        "fontSize": "1.5em",
-        "justifyContent": "space-around",
-        "margin": "10px auto",
-        "textAlign": "center",
-      }
-    }
-  >
+  <nav>
     <NavLink
       activeClassName="active"
-      activeStyle={
-        Object {
-          "backgroundColor": "#f33",
-          "color": "#eee",
-          "textDecoration": "none",
-        }
-      }
       ariaCurrent="true"
       exact={true}
       to="/"
@@ -34,13 +16,6 @@ exports[`should render Header correctly 1`] = `
     </NavLink>
     <NavLink
       activeClassName="active"
-      activeStyle={
-        Object {
-          "backgroundColor": "#f33",
-          "color": "#eee",
-          "textDecoration": "none",
-        }
-      }
       ariaCurrent="true"
       to="/create"
     >
@@ -48,13 +23,6 @@ exports[`should render Header correctly 1`] = `
     </NavLink>
     <NavLink
       activeClassName="active"
-      activeStyle={
-        Object {
-          "backgroundColor": "#f33",
-          "color": "#eee",
-          "textDecoration": "none",
-        }
-      }
       ariaCurrent="true"
       to="/help"
     >
