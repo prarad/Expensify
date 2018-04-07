@@ -1,7 +1,4 @@
 node_modules/
+public/dist/
 *.log
 .Ds_Store
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
