@@ -11,6 +11,7 @@ test('should add new expense', () => {
     note: '',
     amount: 32.3,
     createdAt: 2000,
+    id: '4234er4'
   }
   expect(
     expensesReducer(expenses,
