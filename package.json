@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/server.js",
-    "heroku-postbuild": "cross-env NODE_ENV=development yarn run build:prod",
+    "heroku-postbuild": "yarn run build:prod",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=development webpack -p --env production",
     "serve": "cross-env NODE_ENV=development webpack-dev-server",
