@@ -21,11 +21,6 @@ const demoState = {
 
 store.subscribe(() => {
   let state = store.getState()
-  console.log(state)
-  console.log(getVisible(
-    state.expenses,
-    state.filters
-  ))
 })
 store.dispatch(addExpense({
   description: 'this is a',

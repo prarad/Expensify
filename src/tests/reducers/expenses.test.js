@@ -1,5 +1,5 @@
 import expensesReducer from '../../reducers/expenses';
-import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
+import { addExpense, editExpense, removeExpense, setExpenses } from '../../actions/expenses';
 import expenses from '../fixtures/expenses';
 
 test('should set default state', () => {
@@ -42,4 +42,11 @@ test('should edit an item', () => {
       { ...updates, id: expect.any(String) },
       ...expenses.splice(1)
     ])
+})
+
+test('shoud set expenses', () => {
+  const action = setExpenses(expenses);
+  expect(
+    expensesReducer([], action)
+  ).toEqual(expenses)
 })
