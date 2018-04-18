@@ -15,10 +15,6 @@ const demoState = {
   }
 };
 
-
-
-
-
 store.subscribe(() => {
   let state = store.getState()
 })
