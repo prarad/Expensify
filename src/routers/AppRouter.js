@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom'
-import createHistory from 'history';
+import createHistory from 'history/createBrowserHistory';
 import Dashboard from '../components/ExpenseDashboardPage'
 import Login from '../components/Login';
 import AddExpensePage from '../components/AddExpensePage'
