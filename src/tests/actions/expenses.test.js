@@ -80,7 +80,6 @@ test('should edit expense from firebase', (done) => {
 
     return database.ref(`expenses/${id}`).once('value')
   }).then((snapshot) => {
-    console.log('the snapshot: ', snapshot.val())
     expect(snapshot.val()).toEqual({
       ...expense,
       ...updates
