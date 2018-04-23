@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-bottom: $m-size;
+  }
+
+  .singledatepickerinput {
+    width: 100%;
+  }
+}
+
+.form__error {
+  margin-bottom: $s-size;
+  font-style: italic;
+}

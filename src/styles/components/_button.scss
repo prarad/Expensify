@@ -1,0 +1,31 @@
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $blue;
+  margin: $m-size 0;
+  padding: $s-size;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  line-height: 1;
+  font-size: $font-size-large;
+}
+
+.btn--logout {
+  background: none;
+  margin: 0;
+}
+
+.btn--secondary {
+  background-color: #888888;
+  margin-top: 0;
+}

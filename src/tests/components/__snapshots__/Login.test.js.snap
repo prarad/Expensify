@@ -2,12 +2,25 @@
 
 exports[`should correctly render Login component 1`] = `
 <div
-  className="login-page"
+  className="box-layout"
 >
-  <button
-    onClick={[Function]}
+  <div
+    className="box-layout__box"
   >
-    Login
-  </button>
+    <h1
+      className="box-layout__box--title"
+    >
+      Expensify
+    </h1>
+    <p>
+      It's time to get your expenses under the control.
+    </p>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Login with Google
+    </button>
+  </div>
 </div>
 `;

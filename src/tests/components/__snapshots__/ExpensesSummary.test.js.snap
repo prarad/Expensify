@@ -2,30 +2,72 @@
 
 exports[`should correctly render ExpensesSumarry with 1 expenes 1`] = `
 <div
-  className="expenses-summary"
+  className="page-header"
 >
-  <p>
-    Viewing 
-    1
-     
-    expense
-     totalling 
-    $0.39
-  </p>
+  <div
+    className="container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <span>
+        1
+      </span>
+       
+      expense
+       totalling 
+      <span>
+        $0.39
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="btn"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should correctly render ExpensesSumarry with multiple expenses 1`] = `
 <div
-  className="expenses-summary"
+  className="page-header"
 >
-  <p>
-    Viewing 
-    3
-     
-    expenses
-     totalling 
-    $313.96
-  </p>
+  <div
+    className="container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viewing 
+      <span>
+        3
+      </span>
+       
+      expenses
+       totalling 
+      <span>
+        $313.96
+      </span>
+    </h1>
+    <div
+      className="page-header__actions"
+    >
+      <Link
+        className="btn"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
