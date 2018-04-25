@@ -11,3 +11,8 @@
     font-weight: 700;
   }
 }
+
+.page-header__subtitle {
+  @extend .page-header__title;
+  margin: $s-size 0 $m-size 0;
+}

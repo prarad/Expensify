@@ -51,7 +51,7 @@ exports[`should correctly render ExpensesSumarry with multiple expenses 1`] = `
         3
       </span>
        
-      expenses
+      exepenses
        totalling 
       <span>
         $313.96

@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 import ExpenseForm from './ExpenseForm';
+import ConfirmationModal from '../components/ConfirmationModal';
+import { openConfirmationModal } from '../actions/confirmationModal';
 
 export class EditExpensePage extends React.Component {
   onSubmit = (expense) => {
@@ -12,8 +14,7 @@ export class EditExpensePage extends React.Component {
     this.props.history.push('/')
   }
   onRemove = () => {
-    this.props.startRemoveExpense(this.props.expense.id)
-    this.props.history.push('/')
+    this.props.openModal()
   }
   render() {
     return (
@@ -28,6 +29,7 @@ export class EditExpensePage extends React.Component {
             expense={this.props.expense}
             onSubmit={this.onSubmit}
           />
+          <ConfirmationModal selectedExpense={this.props.expense} history={this.props.history} />
           <button
             className="btn btn--secondary"
             onClick={this.onRemove}
@@ -39,7 +41,7 @@ export class EditExpensePage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch, props) => ({
-  startRemoveExpense: id => dispatch(startRemoveExpense(id)),
+  openModal: () => dispatch(opennModal()),
   startEditExpense: ({ id, updates }) => dispatch(startEditExpense({ id, updates }))
 })
 

@@ -30,6 +30,22 @@ exports[`should render EditExpensePage correctly 1`] = `
       }
       onSubmit={[Function]}
     />
+    <Connect(ConfirmationModal)
+      history={
+        Object {
+          "push": [MockFunction],
+        }
+      }
+      selectedExpense={
+        Object {
+          "amount": 141.35,
+          "createdAt": 345600000,
+          "description": "Coffee and dinner",
+          "id": "3",
+          "note": "",
+        }
+      }
+    />
     <button
       className="btn btn--secondary"
       onClick={[Function]}
